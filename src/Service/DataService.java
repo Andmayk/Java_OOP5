@@ -57,10 +57,19 @@ public class DataService {
         return userList;
     }
 
-    public List<User> getAllStudent(){
-        List<User> resultList = new ArrayList<>();
+    public List<Student> getAllStudent(){
+        List<Student> resultList = new ArrayList<>();
         for(User user : userList){
             if (user instanceof Student){
+                resultList.add((Student) user);
+            }
+        }
+        return resultList;
+    }
+    public List<User> getAllTeacher(){
+        List<User> resultList = new ArrayList<>();
+        for(User user : userList){
+            if (user instanceof Teacher){
                 resultList.add(user);
             }
         }
